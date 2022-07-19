@@ -8,4 +8,12 @@ class StyleManager {
       fontWeight: fontWeight,
     );
   }
+
+  TextStyle subHeading(double fontSize, Color color, FontWeight fontWeight) {
+    return TextStyle(
+      fontSize: fontSize,
+      color: color,
+      fontWeight: fontWeight,
+    );
+  }
 }
