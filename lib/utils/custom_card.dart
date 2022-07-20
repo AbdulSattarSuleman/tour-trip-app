@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:tour_trip_app/presentation/resources/color_manager.dart';
 
 class CustomCard extends StatelessWidget {
   final txt1, txt2, date, time, btntxt;
@@ -11,22 +13,35 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
-    return Container(
-      margin: EdgeInsets.only(left: 10, right: 10),
-      width: screenSize.width * 0.8,
-      height: 100,
-      child: Column(
-        children: [
-          Container(
-            child: Row(
+    return Card(
+      elevation: 4.0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      child: Container(
+        margin: EdgeInsets.only(top: 30, left: 10, right: 10),
+        width: screenSize.width * 0.9,
+        height: 100,
+        child: Column(
+          children: [
+            Stack(
               children: [
-                Text("AP#% AA 77111"),
-                Text("Trip ID - 2325"),
-                Text("06-JUNE_2022" + " " + "06:30 PM")
+                Container(
+                  margin: EdgeInsets.zero,
+                  height: 50,
+                  color: ColorManager.card1Bg,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Expanded(child: Text(txt1)),
+                      Expanded(child: Text(txt2)),
+                      Expanded(child: Text("${date}" + " " + "${time}"))
+                    ],
+                  ),
+                ),
               ],
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
