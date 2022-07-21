@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tour_trip_app/presentation/resources/asset_manager.dart';
 import 'package:tour_trip_app/presentation/resources/color_manager.dart';
 import 'package:tour_trip_app/presentation/resources/style_manager.dart';
-import 'package:tour_trip_app/utils/custom_card.dart';
 import 'package:tour_trip_app/utils/custom_card_1.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -129,7 +129,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Text(
                     AssetManager.trip,
                     style: StyleManager().heading(
-                      48,
+                      ScreenUtil().setSp(32),
                       ColorManager.whiteColor,
                       FontWeight.bold,
                     ),

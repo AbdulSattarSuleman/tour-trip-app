@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tour_trip_app/presentation/resources/color_manager.dart';
 import 'package:tour_trip_app/presentation/resources/style_manager.dart';
 
@@ -55,15 +56,15 @@ class CustomCard1 extends StatelessWidget {
                     Expanded(
                         child: Text(txt1,
                             style: StyleManager()
-                                .h1(18, Colors.white, FontWeight.bold))),
+                                .h1(14.sp, Colors.white, FontWeight.bold))),
                     Expanded(
                         child: Text(txt2,
                             style: StyleManager()
-                                .h1(15, Colors.white, FontWeight.w400))),
+                                .h1(13.sp, Colors.white, FontWeight.w400))),
                     Expanded(
                         child: Text("${date}" + " " + "${time}",
-                            style: StyleManager()
-                                .h1(15, Colors.white, FontWeight.w400)))
+                            style: StyleManager().h1(ScreenUtil().setSp(13),
+                                Colors.white, FontWeight.w400)))
                   ],
                 ),
               ),
@@ -78,15 +79,17 @@ class CustomCard1 extends StatelessWidget {
                 children: [
                   Text(
                     "Istanbul, Turkey ",
-                    style: StyleManager().h1(15, bgColor!, FontWeight.bold),
+                    style: StyleManager()
+                        .h1(ScreenUtil().setSp(13), bgColor!, FontWeight.bold),
                   ),
                   Text(
                     "1500 KM",
-                    style: StyleManager().h1(15, Colors.black, FontWeight.w600),
+                    style: StyleManager().h1(
+                        ScreenUtil().setSp(13), Colors.black, FontWeight.w600),
                   ),
                   Text("Tokyo, Japan",
-                      style:
-                          StyleManager().h1(15, Colors.black, FontWeight.bold)),
+                      style: StyleManager().h1(ScreenUtil().setSp(13),
+                          Colors.black, FontWeight.bold)),
                 ],
               ),
             ),
@@ -130,14 +133,15 @@ class CustomCard1 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text("Istanbul, Turkey ",
-                      style:
-                          StyleManager().h1(15, Colors.black, FontWeight.bold)),
+                      style: StyleManager().h1(ScreenUtil().setSp(13),
+                          Colors.black, FontWeight.bold)),
                   Text("1500 KM",
-                      style:
-                          StyleManager().h1(15, Colors.black, FontWeight.bold)),
+                      style: StyleManager().h1(ScreenUtil().setSp(13),
+                          Colors.black, FontWeight.bold)),
                   Text(
                     "Tokyo, Japan",
-                    style: StyleManager().h1(15, bgColor!, FontWeight.bold),
+                    style: StyleManager()
+                        .h1(ScreenUtil().setSp(13), bgColor!, FontWeight.bold),
                   ),
                 ],
               ),
@@ -186,8 +190,12 @@ class CustomCard1 extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Load Details:"),
-                      Text("Golden Rice, 25T, 1500"),
+                      Text("Load Details:",
+                          style: TextStyle(fontSize: ScreenUtil().setSp(13))),
+                      Text(
+                        "Golden Rice, 25T, 1500",
+                        style: TextStyle(fontSize: ScreenUtil().setSp(13)),
+                      ),
                     ],
                   ),
                 ),
@@ -201,8 +209,8 @@ class CustomCard1 extends StatelessWidget {
                   child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text("${btntxt}",
-                          style: StyleManager().h1(
-                              15, ColorManager.whiteColor, FontWeight.bold))),
+                          style: StyleManager().h1(ScreenUtil().setSp(12),
+                              ColorManager.whiteColor, FontWeight.bold))),
                 )
               ],
             ),
